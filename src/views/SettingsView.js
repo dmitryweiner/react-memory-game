@@ -12,10 +12,11 @@ export default class SettingsView extends Component {
       <Slider
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        defaultValue={3}
+        value={this.props.settings.numbersCount}
         step={1}
         min={1}
         max={6}
+        onChange={(event, value) => this.props.handleSettingsChange("numbersCount", value)}
       />
 
       <Typography id="discrete-slider" gutterBottom>
@@ -24,10 +25,11 @@ export default class SettingsView extends Component {
       <Slider
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        defaultValue={1}
+        value={this.props.settings.numbersMagnitude}
         step={1}
         min={1}
         max={5}
+        onChange={(event, value) => this.props.handleSettingsChange("numbersMagnitude", value)}
       />
 
       <Typography id="discrete-slider" gutterBottom>
@@ -36,10 +38,11 @@ export default class SettingsView extends Component {
       <Slider
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        defaultValue={10}
+        value={this.props.settings.delay}
         step={1}
         min={5}
         max={30}
+        onChange={(event, value) => this.props.handleSettingsChange("delay", value)}
       />
 
       <Button variant="contained" color="primary" onClick={() => this.props.handleTabs(1)}>Играть!</Button>

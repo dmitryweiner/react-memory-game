@@ -76,7 +76,7 @@ class App extends Component {
   };
 
   handleSettingsChange = (name, value) => {
-
+    this.setState({settings: {...this.state.settings, [name]: value}});
   };
 
   render() {
@@ -95,13 +95,16 @@ class App extends Component {
             <MainView handleTabs={this.setTabIndex}/>
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={GAME_TAB_INDEX}>
-            <GameView/>
+            <GameView
+              settings={this.state.settings}
+            />
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={SETTINGS_TAB_INDEX}>
             <SettingsView
               handleTabs={this.setTabIndex}
               handleSettingsChange={this.handleSettingsChange}
-              settings={this.state.settings}/>
+              settings={this.state.settings}
+            />
           </TabPanel>
         </div>
       </div>
