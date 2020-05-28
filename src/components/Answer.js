@@ -1,71 +1,85 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import Countdown360 from "react-countdown360";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {Check} from "@material-ui/icons";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
-class Answer extends Component {
-  state = {
-    userAnswer: ""
+const useStyles = makeStyles(theme =>
+  createStyles({
+    wrapper: {
+      display: "flex",
+      flexDirection: "row",
+      padding: "10px"
+    },
+    formWrapper: {
+      display: "flex",
+      flexDirection: "row",
+      padding: "10px"
+    },
+    margin10:{
+      margin: "10px"
+    }
+  })
+);
+
+const Answer  = ({delay, handleAnswerComplete}) => {
+  const [userAnswer, setUserAnswer] = useState("");
+  const classes = useStyles();
+
+  const handleInputChange = (event) => {
+    setUserAnswer(event.target.value);
   };
 
-  handleInputChange = (event) => {
-    this.setState({
-      userAnswer: event.target.value
-    });
-  };
-
-  handleKeyPress = (event) => {
+  const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      this.handleAnswerComplete();
+      handleAnswerCompleteInner();
       event.preventDefault();
     }
   };
 
-  handleAnswerComplete = () => {
-    this.props.handleAnswerComplete(this.state.userAnswer);
+  const handleAnswerCompleteInner = () => {
+    handleAnswerComplete(userAnswer);
   };
 
-  render() {
-    return (
-      <>
-        <div style={{display: "flex", flexDirection: "row", padding: "10px"}}>
-          <div>
-            <Countdown360
-              borderFillColor="#00ad00"
-              seconds={this.props.delay}
-              onComplete={this.handleAnswerComplete}
+  return (
+    <>
+      <div className={classes.wrapper}>
+        <div>
+          <Countdown360
+            borderFillColor="#00ad00"
+            seconds={delay}
+            onComplete={handleAnswerCompleteInner}
+          />
+        </div>
+        <div>
+          <div className={classes.formWrapper}>
+            <TextField
+              data-testid="answer-input"
+              autoFocus
+              size="small"
+              value={userAnswer}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+              label="Введите запомненные числа"
+              helperText="Введите в любой последовательности и нажмите Enter либо кнопку справа"
+              variant="outlined"
+              className={classes.margin10}
             />
-          </div>
-          <div>
-            <div style={{display: "flex", flexDirection: "row", padding: "10px"}}>
-              <TextField
-                data-testid="answer-input"
-                autoFocus
-                size="small"
-                value={this.state.userAnswer}
-                onChange={this.handleInputChange}
-                onKeyPress={this.handleKeyPress}
-                label="Введите запомненные числа"
-                helperText="Введите в любой последовательности и нажмите Enter либо кнопку справа"
-                variant="outlined"
-                style={{margin: "10px"}}
-              />
-              <Button
-                data-testid="answer-complete-button"
-                variant="contained"
-                color="primary"
-                onClick={this.handleAnswerComplete}
-                style={{margin: "10px"}}
-              >
-                <Check/>
-              </Button>
-            </div>
+            <Button
+              data-testid="answer-complete-button"
+              variant="contained"
+              color="primary"
+              onClick={handleAnswerCompleteInner}
+              className={classes.margin10}
+            >
+              <Check/>
+            </Button>
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 export default Answer;
