@@ -37,15 +37,16 @@ export default class GameView extends Component {
 
   handleAnswerComplete = (userAnswer = "") => {
     let message, messageType;
+    const isAnswerCorrect = checkAnswer(this.state.numbers, userAnswer);
 
-    if (checkAnswer(this.state.numbers, userAnswer)) {
-      // TODO: update stats
+    if (isAnswerCorrect) {
       message = "Правильный ответ!";
       messageType = "success";
     } else {
       message = "К сожалению, ответ неправильный.";
       messageType = "error";
     }
+    this.props.handleStatisticsUpdate(isAnswerCorrect);
 
     this.setState({
       gameState: GAME_STATE_IDLE,

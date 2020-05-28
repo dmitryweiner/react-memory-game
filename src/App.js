@@ -78,6 +78,17 @@ class App extends Component {
     this.setState({settings: {...this.state.settings, [name]: value}});
   };
 
+  handleStatisticsUpdate = (result) => {
+    const newStats = {...this.state.stats};
+    if (result) {
+      newStats.successful += 1;
+    }
+    newStats.games += 1;
+    this.setState({
+      stats: newStats
+    });
+  };
+
   render() {
     //const classes = useStyles();
     return (
@@ -98,6 +109,7 @@ class App extends Component {
               stats={this.state.stats}
               settings={this.state.settings}
               handleTabs={this.setTabIndex}
+              handleStatisticsUpdate={this.handleStatisticsUpdate}
             />
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={SETTINGS_TAB_INDEX}>
