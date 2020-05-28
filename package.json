@@ -1,5 +1,5 @@
 {
-  "name": "git remote add origin https://github.com/dmitryweiner/react-memory-game.git\ngit push -u origin master",
+  "name": "react-memory-game",
   "version": "0.2.0",
   "private": true,
   "homepage": "https://dmitryweiner.github.io/react-memory-game/",
