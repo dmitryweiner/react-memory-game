@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainView 1`] = `
+Array [
+  <p
+    className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+    id="discrete-slider"
+  >
+    Количество чисел
+  </p>,
+  <span
+    className="MuiSlider-root MuiSlider-colorPrimary"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="MuiSlider-rail"
+    />
+    <span
+      className="MuiSlider-track"
+      style={
+        Object {
+          "left": "0%",
+          "width": "40%",
+        }
+      }
+    />
+    <input
+      type="hidden"
+      value="3"
+    />
+    <span
+      aria-labelledby="discrete-slider"
+      aria-orientation="horizontal"
+      aria-valuemax={6}
+      aria-valuemin={1}
+      aria-valuenow={3}
+      className="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+      data-index={0}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      role="slider"
+      style={
+        Object {
+          "left": "40%",
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        className="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+      >
+        <span
+          className="PrivateValueLabel-circle-4"
+        >
+          <span
+            className="PrivateValueLabel-label-5"
+          >
+            3
+          </span>
+        </span>
+      </span>
+    </span>
+  </span>,
+  <p
+    className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+    id="discrete-slider"
+  >
+    Величина чисел
+  </p>,
+  <span
+    className="MuiSlider-root MuiSlider-colorPrimary"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="MuiSlider-rail"
+    />
+    <span
+      className="MuiSlider-track"
+      style={
+        Object {
+          "left": "0%",
+          "width": "0%",
+        }
+      }
+    />
+    <input
+      type="hidden"
+      value="1"
+    />
+    <span
+      aria-labelledby="discrete-slider"
+      aria-orientation="horizontal"
+      aria-valuemax={5}
+      aria-valuemin={1}
+      aria-valuenow={1}
+      className="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+      data-index={0}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      role="slider"
+      style={
+        Object {
+          "left": "0%",
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        className="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+      >
+        <span
+          className="PrivateValueLabel-circle-4"
+        >
+          <span
+            className="PrivateValueLabel-label-5"
+          >
+            1
+          </span>
+        </span>
+      </span>
+    </span>
+  </span>,
+  <p
+    className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+    id="discrete-slider"
+  >
+    Время демонстрации
+  </p>,
+  <span
+    className="MuiSlider-root MuiSlider-colorPrimary"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="MuiSlider-rail"
+    />
+    <span
+      className="MuiSlider-track"
+      style={
+        Object {
+          "left": "0%",
+          "width": "20%",
+        }
+      }
+    />
+    <input
+      type="hidden"
+      value="10"
+    />
+    <span
+      aria-labelledby="discrete-slider"
+      aria-orientation="horizontal"
+      aria-valuemax={30}
+      aria-valuemin={5}
+      aria-valuenow={10}
+      className="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+      data-index={0}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      role="slider"
+      style={
+        Object {
+          "left": "20%",
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        className="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+      >
+        <span
+          className="PrivateValueLabel-circle-4"
+        >
+          <span
+            className="PrivateValueLabel-label-5"
+          >
+            10
+          </span>
+        </span>
+      </span>
+    </span>
+  </span>,
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiButton-label"
+    >
+      Играть!
+    </span>
+  </button>,
+]
+`;

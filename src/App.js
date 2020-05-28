@@ -27,7 +27,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          {children}
         </Box>
       )}
     </div>
@@ -58,7 +58,7 @@ class App extends Component {
     settings: {
       numbersCount: 3,
       numbersMagnitude: 1,
-      delay: 10
+      delay: 5
     },
     stats: {
       games: 0,

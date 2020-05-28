@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question 1`] = `
+Array [
+  <div
+    className="sc-fzqNJr gUxgXI"
+  >
+    <div
+      className="sc-fzoyAV iWAzvD"
+    >
+      10
+      <br />
+      <div
+        className="sc-fzoLag iTKmqL"
+      >
+        seconds
+      </div>
+    </div>
+  </div>,
+  <div
+    data-testid="question-numbers"
+  >
+    1 2 3
+  </div>,
+]
+`;
