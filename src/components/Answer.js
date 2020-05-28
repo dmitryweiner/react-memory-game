@@ -29,28 +29,40 @@ class Answer extends Component {
   render() {
     return (
       <>
-        <Countdown360
-          seconds={this.props.delay}
-          onComplete={this.handleAnswerComplete}
-        />
-        <TextField
-          data-testid="answer-input"
-          autoFocus
-          value={this.state.userAnswer}
-          onChange={this.handleInputChange}
-          onKeyPress={this.handleKeyPress}
-          label="Введите запомненные числа"
-          helperText="Введите в любой последовательности и нажмите Enter либо кнопку справа"
-          variant="outlined"
-        />
-        <Button
-          data-testid="answer-complete-button"
-          variant="contained"
-          color="primary"
-          onClick={this.handleAnswerComplete}
-        >
-          <Check/>
-        </Button>
+        <div style={{display: "flex", flexDirection: "row", padding: "10px"}}>
+          <div>
+            <Countdown360
+              borderFillColor="#00ad00"
+              seconds={this.props.delay}
+              onComplete={this.handleAnswerComplete}
+            />
+          </div>
+          <div>
+            <div style={{display: "flex", flexDirection: "row", padding: "10px"}}>
+              <TextField
+                data-testid="answer-input"
+                autoFocus
+                size="small"
+                value={this.state.userAnswer}
+                onChange={this.handleInputChange}
+                onKeyPress={this.handleKeyPress}
+                label="Введите запомненные числа"
+                helperText="Введите в любой последовательности и нажмите Enter либо кнопку справа"
+                variant="outlined"
+                style={{margin: "10px"}}
+              />
+              <Button
+                data-testid="answer-complete-button"
+                variant="contained"
+                color="primary"
+                onClick={this.handleAnswerComplete}
+                style={{margin: "10px"}}
+              >
+                <Check/>
+              </Button>
+            </div>
+          </div>
+        </div>
       </>
     );
   }

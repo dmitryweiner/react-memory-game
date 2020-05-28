@@ -63,7 +63,6 @@ class App extends Component {
     stats: {
       games: 0,
       successful: 0,
-      averageTime: 0
     }
   };
 
@@ -96,7 +95,9 @@ class App extends Component {
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={GAME_TAB_INDEX}>
             <GameView
+              stats={this.state.stats}
               settings={this.state.settings}
+              handleTabs={this.setTabIndex}
             />
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={SETTINGS_TAB_INDEX}>

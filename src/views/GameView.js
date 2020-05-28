@@ -1,9 +1,4 @@
 import React, {Component} from "react";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import Icon from "@material-ui/core/Icon";
-import Countdown360 from "react-countdown360";
-import {Check} from "@material-ui/icons";
 import Question from "../components/Question";
 import {createRandomNumbers} from "../utils/randomNumbers";
 import Answer from "../components/Answer";
@@ -18,7 +13,8 @@ export default class GameView extends Component {
   state = {
     gameState: GAME_STATE_IDLE,
     numbers: [],
-    message: ""
+    message: "",
+    messageType: "success"
   };
 
   componentDidMount() {
@@ -40,18 +36,21 @@ export default class GameView extends Component {
   };
 
   handleAnswerComplete = (userAnswer = "") => {
-    let message;
+    let message, messageType;
 
     if (checkAnswer(this.state.numbers, userAnswer)) {
       // TODO: update stats
       message = "Правильный ответ!";
+      messageType = "success";
     } else {
       message = "К сожалению, ответ неправильный.";
+      messageType = "error";
     }
 
     this.setState({
       gameState: GAME_STATE_IDLE,
-      message
+      message,
+      messageType
     });
   };
 
@@ -83,8 +82,11 @@ export default class GameView extends Component {
         )}
         {this.state.gameState === GAME_STATE_IDLE && (
           <Results
+            stats={this.props.stats}
             message={this.state.message}
+            messageType={this.state.messageType}
             handleMoreButton={this.handleMore}
+            handleBackButton={this.props.handleTabs}
           />
         )}
       </>
