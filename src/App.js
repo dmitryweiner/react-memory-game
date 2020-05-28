@@ -102,7 +102,10 @@ class App extends Component {
             </Tabs>
           </AppBar>
           <TabPanel value={this.state.tabIndex} index={MAIN_TAB_INDEX}>
-            <MainView handleTabs={this.setTabIndex}/>
+            <MainView
+              stats={this.state.stats}
+              handleTabs={this.setTabIndex}
+            />
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={GAME_TAB_INDEX}>
             <GameView
