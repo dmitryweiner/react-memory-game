@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import './App.css';
+import React, { Component } from "react";
+import { makeStyles, Theme } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import "./App.css";
 import SettingsView from "./views/SettingsView";
 import MainView from "./views/MainView";
 import GameView from "./views/GameView";
@@ -25,11 +25,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
 }
@@ -37,7 +33,7 @@ function TabPanel(props) {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`
   };
 }
 
@@ -62,12 +58,12 @@ class App extends Component {
     },
     stats: {
       games: 0,
-      successful: 0,
+      successful: 0
     }
   };
 
   setTabIndex = (tabIndex) => {
-    this.setState({tabIndex});
+    this.setState({ tabIndex });
   };
 
   handleTabIndexChange = (event, newValue) => {
@@ -75,11 +71,11 @@ class App extends Component {
   };
 
   handleSettingsChange = (name, value) => {
-    this.setState({settings: {...this.state.settings, [name]: value}});
+    this.setState({ settings: { ...this.state.settings, [name]: value } });
   };
 
   handleStatisticsUpdate = (result) => {
-    const newStats = {...this.state.stats};
+    const newStats = { ...this.state.stats };
     if (result) {
       newStats.successful += 1;
     }
@@ -95,17 +91,18 @@ class App extends Component {
       <div className="tabs-wrapper">
         <div className="tabs-root">
           <AppBar position="static">
-            <Tabs value={this.state.tabIndex} onChange={this.handleTabIndexChange} aria-label="simple tabs example">
+            <Tabs
+              value={this.state.tabIndex}
+              onChange={this.handleTabIndexChange}
+              aria-label="simple tabs example"
+            >
               <Tab label="Главная" {...a11yProps(MAIN_TAB_INDEX)} />
               <Tab label="Игра" {...a11yProps(GAME_TAB_INDEX)} />
               <Tab label="Настройки" {...a11yProps(SETTINGS_TAB_INDEX)} />
             </Tabs>
           </AppBar>
           <TabPanel value={this.state.tabIndex} index={MAIN_TAB_INDEX}>
-            <MainView
-              stats={this.state.stats}
-              handleTabs={this.setTabIndex}
-            />
+            <MainView stats={this.state.stats} handleTabs={this.setTabIndex} />
           </TabPanel>
           <TabPanel value={this.state.tabIndex} index={GAME_TAB_INDEX}>
             <GameView

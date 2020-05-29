@@ -1,6 +1,6 @@
 export function createRandomNumbers(count, magnitude) {
   const result = [];
-  for(let i = 0; i < count; i++) {
+  for (let i = 0; i < count; i++) {
     result.push(createRandomNumber(magnitude, result));
   }
   return result;

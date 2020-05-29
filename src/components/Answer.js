@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Countdown360 from "react-countdown360";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {Check} from "@material-ui/icons";
-import {createStyles, makeStyles} from "@material-ui/core/styles";
+import { Check } from "@material-ui/icons";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
       display: "flex",
@@ -17,13 +17,13 @@ const useStyles = makeStyles(theme =>
       flexDirection: "row",
       padding: "10px"
     },
-    margin10:{
+    margin10: {
       margin: "10px"
     }
   })
 );
 
-const Answer  = ({delay, handleAnswerComplete}) => {
+const Answer = ({ delay, handleAnswerComplete }) => {
   const [userAnswer, setUserAnswer] = useState("");
   const classes = useStyles();
 
@@ -32,7 +32,7 @@ const Answer  = ({delay, handleAnswerComplete}) => {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleAnswerCompleteInner();
       event.preventDefault();
     }
@@ -73,7 +73,7 @@ const Answer  = ({delay, handleAnswerComplete}) => {
               onClick={handleAnswerCompleteInner}
               className={classes.margin10}
             >
-              <Check/>
+              <Check />
             </Button>
           </div>
         </div>
