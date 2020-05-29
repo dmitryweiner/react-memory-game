@@ -1,7 +1,10 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "parser": "babel-eslint",
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "quotes": [2, "double"],
+    "comma-dangle": [2, "never"]
   }
 }
