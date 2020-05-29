@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import { Check } from "@material-ui/icons";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     wrapper: {
       display: "flex",
