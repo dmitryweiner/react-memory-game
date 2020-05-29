@@ -31,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "*.(js|jsx)": ["npm run lint:fix", "git add"]
+    "*.(js|jsx)": ["eslint --fix"]
   },
   "browserslist": {
     "production": [
